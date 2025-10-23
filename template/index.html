@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN Tailwind & DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- CDN Font Awesome -->
+    <script src="https://kit.fontawesome.com/1d16c05dfb.js" crossorigin="anonymous"></script>
+    <title>Hacktiv8 Games</title>
+</head>
+
+<body>
+    <!-- Register Section -->
+    <div class="relative flex flex-col justify-center overflow-hidden bg-base-100 mt-6">
+        <div class="w-full p-6 m-auto rounded-lg shadow-md lg:max-w-lg bg-base-300">
+            <div class="flex justify-center mb-5 mr-5">
+                <img src="./assets/hacktiv-esport.png" class="w-1/2" />
+            </div>
+            <h1 class="text-3xl font-semibold text-center text-accent">
+                Register
+            </h1>
+
+            <form class="space-y-4">
+                <div>
+                    <label class="label">
+                        <span class="text-base label-text">Email</span>
+                    </label>
+                    <input type="text" placeholder="Enter Email" class="w-full input input-bordered input-accent" />
+                </div>
+                <div>
+                    <label class="label">
+                        <span class="text-base label-text">Name</span>
+                    </label>
+                    <input type="text" placeholder="Enter Name" class="w-full input input-bordered input-accent" />
+                </div>
+                <div>
+                    <label class="label">
+                        <span class="text-base label-text">Password</span>
+                    </label>
+                    <input type="password" placeholder="Enter Password"
+                        class="w-full input input-bordered input-accent" />
+                </div>
+                <div>
+                    <button class="btn btn-accent w-full mt-5">Register</button>
+                </div>
+            </form>
+            <div class="divider divider-accent mt-7">OR</div>
+            <p class="text-center">Already have an account ? Click <a to='/login' class="underline">here</a> to login
+            </p>
+        </div>
+    </div>
+    <!-- End of Register Section -->
+
+    <!-- Login Section -->
+    <div class="relative flex flex-col justify-center h-[85dvh] overflow-hidden bg-base-100 mt-10">
+        <div class="w-full p-6 m-auto rounded-lg shadow-md lg:max-w-lg bg-base-300">
+            <div class="flex justify-center mb-5 mr-5">
+                <img src="./assets/hacktiv-esport.png" class="w-1/2" />
+            </div>
+            <h1 class="text-3xl font-semibold text-center text-accent">
+                Log In
+            </h1>
+
+            <form class="space-y-4">
+                <div>
+                    <label class="label">
+                        <span class="text-base label-text">Email</span>
+                    </label>
+                    <input type="text" placeholder="Enter Email" class="w-full input input-bordered input-accent" />
+                </div>
+                <div>
+                    <label class="label">
+                        <span class="text-base label-text">Password</span>
+                    </label>
+                    <input type="password" placeholder="Enter Password"
+                        class="w-full input input-bordered input-accent" />
+                </div>
+                <div>
+                    <button class="btn btn-accent w-full mt-5">Log In</button>
+                </div>
+            </form>
+            <div class="divider divider-accent mt-7">OR</div>
+            <p class="text-center">Don't have any account ? Click
+                <a to='/register' class="underline">here</a> to register
+            </p>
+        </div>
+    </div>
+    <!-- End of Login Section -->
+
+    <!-- Navbar Section -->
+    <nav class="navbar sticky top-0 z-10 p-3 bg-base-300 shadow">
+        <div class="navbar-start">
+            <a class="text-2xl font-bold px-6">
+                <img src="./assets/hacktiv-esport.png" class="w-1/2" />
+            </a>
+        </div>
+        <div class="navbar-end">
+        </div>
+        <div class="navbar-end">
+            <a class="btn btn-accent btn-sm mx-1">Add Game</a>
+            <a class="btn btn-neutral btn-sm mx-1">
+                Login
+            </a>
+            <a class="btn btn-error btn-sm mx-1">
+                Logout
+            </a>
+        </div>
+    </nav>
+    <!-- End of Navbar Section -->
+
+    <!-- Home Section -->
+    <div id="PAGE-HOME" class="p-3">
+        <main class="grid grid-cols-2 gap-5 px-10 my-8">
+            <!-- Card Section-->
+            <div class="card bg-base-300 shadow flex flex-row">
+                <figure class="flex flex-col">
+                    <img src="https://www.dexerto.com/cdn-cgi/image/width=1200,quality=60,format=auto/https://editors.dexerto.com/wp-content/uploads/2020/08/kda-return-new-song-the-baddest-announce-ep.png"
+                        alt="product image" class="max-w-sm h-3/4 rounded-lg shadow ml-5" />
+                </figure>
+                <div class="card-body flex-1">
+                    <b>League of Legends</b>
+                    <hr>
+                    <div>
+                        <i class="fa-solid fa-gamepad"></i> MOBA
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-dev"></i> Riot Games
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-calendar-days"></i> 2009-10-27
+                    </div>
+                    <button class="btn btn-error btn-sm w-full mt-2">Delete</button>
+                </div>
+            </div>
+            <!-- End of Card Section -->
+            <!-- Card Section-->
+            <div class="card bg-base-300 shadow flex flex-row">
+                <figure class="flex flex-col">
+                    <img src="https://cdn1-production-images-kly.akamaized.net/2cz3nNAb61C_WtZDIByp9jys2Ww=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3142622/original/000361800_1591163362-valorant-2.jpg"
+                        alt="product image" class="max-w-sm h-3/4 rounded-lg shadow ml-5" />
+                </figure>
+                <div class="card-body flex-1">
+                    <b>Valorant</b>
+                    <hr>
+                    <div>
+                        <i class="fa-solid fa-gamepad"></i> FPS
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-dev"></i> Riot Games
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-calendar-days"></i> 2020-06-02
+                    </div>
+                    <button class="btn btn-error btn-sm w-full mt-2">Delete</button>
+                </div>
+            </div>
+            <!-- End of Card Section -->
+            <!-- Card Section-->
+            <div class="card bg-base-300 shadow flex flex-row">
+                <figure class="flex flex-col">
+                    <img src="https://estnn.com/wp-content/uploads/2022/05/20491388.jpg" alt="product image"
+                        class="max-w-sm h-3/4 rounded-lg shadow ml-5" />
+                </figure>
+                <div class="card-body flex-1">
+                    <b>CS:GO</b>
+                    <hr>
+                    <div>
+                        <i class="fa-solid fa-gamepad"></i> FPS
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-dev"></i> Valve Corporation
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-calendar-days"></i> 2012-08-21
+                    </div>
+                    <button class="btn btn-error btn-sm w-full mt-2">Delete</button>
+                </div>
+            </div>
+            <!-- End of Card Section -->
+            <!-- Card Section-->
+            <div class="card bg-base-300 shadow flex flex-row">
+                <figure class="flex flex-col">
+                    <img src="https://cdn0-production-images-kly.akamaized.net/Hyl2S_OHDEDCGayRTeriz3hPi38=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3488932/original/008102000_1624278462-Mobile_Legends_11.jpg"
+                        alt="product image" class="max-w-sm h-3/4 rounded-lg shadow ml-5" />
+                </figure>
+                <div class="card-body flex-1">
+                    <b>Mobile Legends</b>
+                    <hr>
+                    <div>
+                        <i class="fa-solid fa-gamepad"></i> MOBA
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-dev"></i> Moonton
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-calendar-days"></i> 2016-07-14
+                    </div>
+                    <button class="btn btn-error btn-sm w-full mt-2">Delete</button>
+                </div>
+            </div>
+            <!-- End of Card Section -->
+        </main>
+    </div>
+    <!-- End of Home Section -->
+
+    <!-- AddPage Section -->
+    <div class="p-10">
+        <form class="bg-base-300 p-5 rounded-lg">
+            <div class="grid grid-cols-2 gap-5 mt-4">
+                <div>
+                    <label class="label">
+                        <span class="text-base label-text">Name</span>
+                    </label>
+                    <input type="text" placeholder="Name" class="w-full input input-bordered input-accent" />
+                </div>
+                <div>
+                    <label class="label">
+                        <span class="text-base label-text">Game Image (URL)</span>
+                    </label>
+                    <input type="text" placeholder="Enter Game Image"
+                        class="w-full input input-bordered input-accent" />
+                </div>
+                <div>
+                    <label class="label">
+                        <span class="text-base label-text">Release Date</span>
+                    </label>
+                    <input type="date" placeholder="date" class="w-full input input-bordered input-accent" />
+                </div>
+                <div>
+                    <label class="label">
+                        <span class="text-base label-text">Developer</span>
+                    </label>
+                    <input type="text" placeholder="Enter Developer" class="w-full input input-bordered input-accent" />
+                </div>
+            </div>
+            <div class="mt-5">
+                <label class="label">
+                    <span class="text-base label-text">Genre</span>
+                </label>
+                <select class="w-full btn btn-outline btn-accent">
+                    <option disabled selected>SELECT GENRE</option>
+                    <option value="MOBA">MOBA</option>
+                    <option value="FPS">FPS</option>
+                    <option value="BR">Battle Royale</option>
+                </select>
+            </div>
+
+            <button class="w-full btn btn-accent mt-10">Add New Game</button>
+        </form>
+    </div>
+    <!-- End of AddPage Section -->
+</body>
+
+</html>

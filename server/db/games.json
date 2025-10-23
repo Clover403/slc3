@@ -1,0 +1,66 @@
+[
+    {
+        "name": "League of Legends",
+        "gameImg": "https://www.dexerto.com/cdn-cgi/image/width=1200,quality=60,format=auto/https://editors.dexerto.com/wp-content/uploads/2020/08/kda-return-new-song-the-baddest-announce-ep.png",
+        "releaseDate": "2009-10-27",
+        "developer": "Riot Games",
+        "genre": "MOBA",
+        "UserId": 1
+    },
+    {
+        "name": "Mobile Legends",
+        "gameImg": "https://cdn0-production-images-kly.akamaized.net/Hyl2S_OHDEDCGayRTeriz3hPi38=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3488932/original/008102000_1624278462-Mobile_Legends_11.jpg",
+        "releaseDate": "2016-07-14",
+        "developer": "Moonton",
+        "genre": "MOBA",
+        "UserId": 1
+    },
+    {
+        "name": "Arena Of Valor",
+        "gameImg": "https://gamebrott.com/wp-content/uploads/2020/11/arena_of_valor.jpg",
+        "releaseDate": "2016-10-13",
+        "developer": "Tencent Games",
+        "genre": "MOBA",
+        "UserId": 1
+    },
+    {
+        "name": "DOTA 2",
+        "gameImg": "https://c4.wallpaperflare.com/wallpaper/825/375/685/dota-2-wallpaper-preview.jpg",
+        "releaseDate": "2013-07-09",
+        "developer": "Valve Corporation",
+        "genre": "MOBA",
+        "UserId": 1
+    },
+    {
+        "name": "VALORANT",
+        "gameImg": "https://cdn1-production-images-kly.akamaized.net/2cz3nNAb61C_WtZDIByp9jys2Ww=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3142622/original/000361800_1591163362-valorant-2.jpg",
+        "releaseDate": "2020-06-02",
+        "developer": "Riot Games",
+        "genre": "FPS",
+        "UserId": 2
+    },
+    {
+        "name": "CS:GO",
+        "gameImg": "https://estnn.com/wp-content/uploads/2022/05/20491388.jpg",
+        "releaseDate": "2012-08-21",
+        "developer": "Valve Corporation",
+        "genre": "FPS",
+        "UserId": 2
+    },
+    {
+        "name": "Free Fire",
+        "gameImg": "https://aidsindonesia.or.id/wp-content/uploads/2021/12/Garena-Free-Fire.jpg",
+        "releaseDate": "2017-12-04",
+        "developer": "111dots Studio",
+        "genre": "BR",
+        "UserId": 2
+    },
+    {
+        "name": "PUBG",
+        "gameImg": "https://c4.wallpaperflare.com/wallpaper/320/205/156/pubg-mobile-wallpaper-preview.jpg",
+        "releaseDate": "2018-03-19",
+        "developer": "Tencent Games",
+        "genre": "BR",
+        "UserId": 2
+    }
+]

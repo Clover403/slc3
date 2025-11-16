@@ -4,7 +4,7 @@ const signToken=(payload)=>{
     return jwt.sign(payload, 'secretKey')
 }
 const verify=(token)=>{
-    return jwt.sign(token, 'secretKey')
+    return jwt.verify(token, 'secretKey')
 }
 
 module.exports = {signToken, verify}

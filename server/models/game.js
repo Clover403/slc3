@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Game.belongsTo(models.User,{foreignKey:"id"})
+      Game.belongsTo(models.User,{foreignKey:"UserId"})
     }
   }
   Game.init({
@@ -26,8 +26,8 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.STRING,
       allowNull:false,
       validate:{
-        notNull:{msg:"Name is required"},
-        notEmpty:{msg:"Name is required"}
+        notNull:{msg:"Game image is required"},
+        notEmpty:{msg:"Game image is required"}
       }
     },
     releaseDate:{
@@ -54,6 +54,14 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty:{msg:"Genre is required"}
       }
     },
+    UserId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notNull: { msg: "UserId is required" },
+        notEmpty: { msg: "UserId is required" }
+      }
+    }
   }, {
     sequelize,
     modelName: 'Game',

@@ -1,15 +1,27 @@
 const { signToken } = require("./helpers/jwt");
+const { compare } = require("./helpers/bcrypt");
 const { User, Game } = require("./models/index");
 
 class Controller {
   static async register(req, res, next) {
     try {
       const { email, name, password } = req.body;
-      if(!email || !password || !name) throw{name:'Badrequest'}
+      if (email) {
+        const existingUser = await User.findOne({ where: { email } });
+        if (existingUser) {
+          throw {
+            name: "SequelizeUniqueConstraintError",
+            errors: [{ message: "Email must be unique" }],
+          };
+        }
+      }
+      const user = await User.create({ email, name, password });
 
-      const data = await User.create({ email, name, password });
-
-      res.status(201).json(data);
+      res.status(201).json({
+        id: user.id,
+        email: user.email,
+        name: user.name,
+      });
     } catch (error) {
       next(error)
     }
@@ -18,22 +30,21 @@ class Controller {
   static async login(req, res, next) {
     try {
       const { email, password } = req.body;
-      if(!email || !password) throw{name:'Unauthorized'}
-
       const data = await User.findOne({
         where: { email },
       });
-      if (!email) {
-        throw { name: "Notfound" };
+      if (!data) {
+        throw { name: "LoginError" };
       }
 
-      if (!compare(data.password, password)) throw { name: "LoginError" };
+      const isValidPassword = compare(password, data.password);
+      if (!isValidPassword) throw { name: "LoginError" };
       const payload = {
         id: data.id,
         email: data.email,
       };
       const access_token = signToken(payload);
-      res.status(201).json(access_token);
+      res.status(200).json({ access_token });
     } catch (error) {
       next(error)
     }
@@ -45,8 +56,7 @@ class Controller {
         include:User
       });
 
-      if (!data) {throw { name: "Notfound" }}
-      res.status(200).json({data: data})
+      res.status(200).json(data)
     } catch (error) {
       next(error)
     }
@@ -54,12 +64,10 @@ class Controller {
 
   static async add(req, res, next) {
     try {
-      const {usrId} = req.loginInfo
+      const { userId } = req.loginInfo
       const {name, gameImg, releaseDate, developer, genre} = req.body
-      const data = await Game.create({name, gameImg, releaseDate, developer, genre, UserId:usrId})
-      delete data.datavalues.createdAt
-      delete data.datavalues.updatedAt
-      res.status(200).json(data)
+      const data = await Game.create({name, gameImg, releaseDate, developer, genre, UserId:userId})
+      res.status(201).json(data)
     } catch (error) {
       next(error)
     }
@@ -70,8 +78,7 @@ class Controller {
       const data = await Game.findByPk(id)
       if (!data) {throw { name: "Notfound" }}
       await data.destroy()
-
-      res.status(200).json("Game has been deleted")
+      res.status(200).json({ message: "Game has been deleted" })
     } catch (error) {
       next(error)
     }

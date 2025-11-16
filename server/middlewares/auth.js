@@ -10,11 +10,13 @@ const auth = (req, res, next) => {
     const { authorization } = req.headers;
     if (!authorization) throw { name: "Unauthorized" };
 
-    const access_token = authorization.split(" ")[1];
+    const [scheme, token] = authorization.split(" ");
+    if (scheme !== "Bearer" || !token) throw { name: "Unauthorized" };
+    const access_token = token;
     const payload = verify(access_token);
 
     req.loginInfo = {
-      usrId: payload.id,
+      userId: payload.id,
       email: payload.email,
     };
     next();
@@ -26,10 +28,10 @@ const auth = (req, res, next) => {
 const autz = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { usrId } = req.loginInfo;
+    const { userId } = req.loginInfo;
     const game = await Game.findByPk(id);
     if (!game) throw { name: 'Notfound' };
-    if (usrId !== game.UserId) throw { name: 'Forbidden' };
+    if (userId !== game.UserId) throw { name: 'Forbidden' };
     next();
   } catch (error) {
     next(error);
